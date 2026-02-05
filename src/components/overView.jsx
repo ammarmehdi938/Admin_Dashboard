@@ -10,7 +10,7 @@ const OverView = () => {
       <Box>
         <CardsContainer />
       </Box>
-      <Box sx={{ mt: "50px" }}>
+      <Box sx={{ mt: "50px", marginLeft: "-20px" }}>
         <RevenueChart />
       </Box>
       <Box

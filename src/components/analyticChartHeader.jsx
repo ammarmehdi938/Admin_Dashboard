@@ -1,34 +1,24 @@
-import { TextField, Box, Button } from "@mui/material";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-
-const TopProductSearchBar = () => {
+const AnalyticChartHeader = () => {
   return (
     <Box
       sx={{
         display: "flex",
-        alignItems: "center",
-        justifyContent: "space-evenly",
-        paddingY: "20px",
+        justifyContent: "space-between",
+        marginX: "30px",
+        marginY: "40px",
       }}
     >
-      <TextField
-        placeholder="Search products, SKU or catagory"
-        sx={{
-          width: "400px",
-          border: "1px solid #423A53",
-          marginRight: "10px",
-          borderRadius: "8px",
-          "&:hover": {
-            border: "0px ",
-          },
-        }}
-      ></TextField>
+      <Typography
+        fontFamily="'Playfair Display', serif"
+        sx={{ fontSize: "20px", fontWeight: 500, color: "#F8FAFC" }}
+      >
+        Revenue Chart
+      </Typography>
       <Box
         sx={{
-          width: "380px",
           border: "1px solid #423A53",
           borderRadius: "8px",
-          ml: "20px",
+          //   ml: "20px",
           display: "flex",
           justifyContent: "space-evenly",
           alignItems: "center",
@@ -45,7 +35,7 @@ const TopProductSearchBar = () => {
             },
           }}
         >
-          All
+          7D
         </Button>
         <Button
           sx={{
@@ -58,7 +48,7 @@ const TopProductSearchBar = () => {
             },
           }}
         >
-          Active
+          30D
         </Button>
         <Button
           sx={{
@@ -71,7 +61,7 @@ const TopProductSearchBar = () => {
             },
           }}
         >
-          Low Stock
+          90D
         </Button>
         <Button
           sx={{
@@ -84,10 +74,10 @@ const TopProductSearchBar = () => {
             },
           }}
         >
-          Archieved
+          1Y
         </Button>
       </Box>
     </Box>
   );
 };
-export default TopProductSearchBar;
+export default AnalyticChartHeader;

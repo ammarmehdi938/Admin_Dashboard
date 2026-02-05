@@ -1,199 +1,152 @@
-import { Box, Typography } from "@mui/material";
+import {
+  Box,
+  Typography,
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+} from "@mui/material";
 import "@fontsource/playfair-display";
-import Button from "@mui/material/Button";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import AssessmentOutlinedIcon from "@mui/icons-material/AssessmentOutlined";
-import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
-import FilterFramesOutlinedIcon from "@mui/icons-material/FilterFramesOutlined";
-import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
-import PaymentsOutlinedIcon from "@mui/icons-material/PaymentsOutlined";
-import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import {
+  HomeOutlined,
+  AssessmentOutlined,
+  Inventory2Outlined,
+  FilterFramesOutlined,
+  AccountBoxOutlined,
+  PaymentsOutlined,
+  SettingsOutlined,
+  HelpOutlineOutlined,
+} from "@mui/icons-material";
+import { NavLink } from "react-router-dom";
+
+const menuItemStyle = {
+  height: 48,
+  mx: 1.5,
+  mb: 0.5,
+  borderRadius: "12px",
+  color: "#A7AFBF",
+  "& .MuiListItemIcon-root": {
+    color: "#A7AFBF",
+    minWidth: 40,
+  },
+  "&:hover": {
+    backgroundColor: "#2C284A",
+  },
+  "&.active": {
+    backgroundColor: "#7F5FF4",
+    color: "#FFFFFF",
+    "& .MuiListItemIcon-root": {
+      color: "#FFFFFF",
+    },
+  },
+};
+
+const SectionTitle = ({ title }) => (
+  <Typography
+    sx={{
+      fontSize: 13,
+      color: "#5A687F",
+      px: 3,
+      mt: 4,
+      mb: 1,
+      letterSpacing: "0.08em",
+    }}
+  >
+    {title}
+  </Typography>
+);
+
 const SideBar = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#1C1C36",
+        width: 300,
         minHeight: "100vh",
-        width: "400px",
-        overflowY: "scroll",
-        overflowX: "auto",
+        backgroundColor: "#1C1C36",
+        // overflow: "auto",
       }}
     >
-      <Box
-        sx={{
-          mt: "50px",
-          mb: "60px",
-        }}
-      >
-        <Box sx={{ paddingLeft: "30px" }}>
-          <Typography
-            variant="h4"
-            fontFamily="'Playfair Display', serif"
-            sx={{
-              color: "#D2C3FD",
-              fontSize: "200",
-              // fontFamily: "'Playfair Display', serif",
-            }}
-          >
-            Atelier
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{ color: "#5A687F", fontSize: "15px", marginTop: "12px" }}
-          >
-            COMMERECE
-          </Typography>
-          {/* <hr /> */}
-        </Box>
-        <Box
-          sx={{
-            mt: "60px",
-          }}
+      {/* Logo */}
+      <Box sx={{ px: 3, pt: 5, pb: 6 }}>
+        <Typography
+          variant="h4"
+          fontFamily="'Playfair Display', serif"
+          sx={{ color: "#D2C3FD" }}
         >
-          <Typography
-            sx={{ fontSize: "15px", color: "#5A687F", pl: "30px", mb: "10px" }}
-          >
-            MAIN
-          </Typography>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#1C1C36",
-              mt: "5px",
-
-              width: "280px",
-              height: "45px",
-              boxShadow: "none",
-              marginBottom: "10px",
-              "&:hover": { boxShadow: "none", backgroundColor: "#7F5FF4" },
-            }}
-            startIcon={<HomeOutlinedIcon sx={{ color: "#A7AFBF" }} />}
-          >
-            Dashboard
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#1C1C36",
-              mt: "5px",
-              width: "280px",
-              height: "45px",
-              boxShadow: "none",
-              "&:hover": { boxShadow: "none", backgroundColor: "#7F5FF4" },
-            }}
-            startIcon={<AssessmentOutlinedIcon sx={{ color: "#A7AFBF" }} />}
-          >
-            Analytics
-          </Button>
-          <Typography
-            sx={{
-              fontSize: "15px",
-              color: "#5A687F",
-              pl: "30px",
-              mb: "10px",
-              mt: "60px",
-            }}
-          >
-            MANAGEMENT
-          </Typography>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#1C1C36",
-              mt: "5px",
-              width: "280px",
-              height: "45px",
-              boxShadow: "none",
-              "&:hover": { boxShadow: "none", backgroundColor: "#7F5FF4" },
-            }}
-            startIcon={<Inventory2OutlinedIcon sx={{ color: "#A7AFBF" }} />}
-          >
-            Products
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#1C1C36",
-              mt: "5px",
-              width: "280px",
-              height: "45px",
-              boxShadow: "none",
-              "&:hover": { boxShadow: "none", backgroundColor: "#7F5FF4" },
-            }}
-            startIcon={<FilterFramesOutlinedIcon sx={{ color: "#A7AFBF" }} />}
-          >
-            Orders
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#1C1C36",
-              mt: "5px",
-              width: "280px",
-              height: "45px",
-              boxShadow: "none",
-              "&:hover": { boxShadow: "none", backgroundColor: "#7F5FF4" },
-            }}
-            startIcon={<AccountBoxOutlinedIcon sx={{ color: "#A7AFBF" }} />}
-          >
-            Customer
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#1C1C36",
-              mt: "5px",
-              width: "280px",
-              height: "45px",
-              boxShadow: "none",
-              "&:hover": { boxShadow: "none", backgroundColor: "#7F5FF4" },
-            }}
-            startIcon={<PaymentsOutlinedIcon sx={{ color: "#A7AFBF" }} />}
-          >
-            Payments
-          </Button>
-          <Typography
-            sx={{
-              fontSize: "15px",
-              color: "#5A687F",
-              pl: "30px",
-              mb: "10px",
-              mt: "60px",
-            }}
-          >
-            SETTINGS
-          </Typography>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#1C1C36",
-              mt: "5px",
-              width: "280px",
-              height: "45px",
-              boxShadow: "none",
-              "&:hover": { boxShadow: "none", backgroundColor: "#7F5FF4" },
-            }}
-            startIcon={<SettingsOutlinedIcon sx={{ color: "#A7AFBF" }} />}
-          >
-            PREFERENCE
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#1C1C36",
-              mt: "5px",
-              width: "280px",
-              height: "45px",
-              boxShadow: "none",
-              "&:hover": { boxShadow: "none", backgroundColor: "#7F5FF4" },
-            }}
-            startIcon={<HelpOutlineOutlinedIcon sx={{ color: "#A7AFBF" }} />}
-          >
-            HELP & SUPPORT
-          </Button>
-        </Box>
+          Atelier
+        </Typography>
+        <Typography sx={{ color: "#5A687F", fontSize: 14, mt: 1 }}>
+          COMMERCE
+        </Typography>
       </Box>
+
+      <List disablePadding>
+        <SectionTitle title="MAIN" />
+
+        <ListItemButton component={NavLink} to="/" sx={menuItemStyle}>
+          <ListItemIcon>
+            <HomeOutlined />
+          </ListItemIcon>
+          <ListItemText primary="Dashboard" />
+        </ListItemButton>
+
+        <ListItemButton component={NavLink} to="/analytics" sx={menuItemStyle}>
+          <ListItemIcon>
+            <AssessmentOutlined />
+          </ListItemIcon>
+          <ListItemText primary="Analytics" />
+        </ListItemButton>
+
+        <SectionTitle title="MANAGEMENT" />
+
+        <ListItemButton component={NavLink} to="/products" sx={menuItemStyle}>
+          <ListItemIcon>
+            <Inventory2Outlined />
+          </ListItemIcon>
+          <ListItemText primary="Products" />
+        </ListItemButton>
+
+        <ListItemButton component={NavLink} to="/orders" sx={menuItemStyle}>
+          <ListItemIcon>
+            <FilterFramesOutlined />
+          </ListItemIcon>
+          <ListItemText primary="Orders" />
+        </ListItemButton>
+
+        <ListItemButton component={NavLink} to="/customers" sx={menuItemStyle}>
+          <ListItemIcon>
+            <AccountBoxOutlined />
+          </ListItemIcon>
+          <ListItemText primary="Customers" />
+        </ListItemButton>
+
+        <ListItemButton component={NavLink} to="/payments" sx={menuItemStyle}>
+          <ListItemIcon>
+            <PaymentsOutlined />
+          </ListItemIcon>
+          <ListItemText primary="Payments" />
+        </ListItemButton>
+
+        <SectionTitle title="SETTINGS" />
+
+        <ListItemButton
+          component={NavLink}
+          to="/preferences"
+          sx={menuItemStyle}
+        >
+          <ListItemIcon>
+            <SettingsOutlined />
+          </ListItemIcon>
+          <ListItemText primary="Preferences" />
+        </ListItemButton>
+
+        <ListItemButton component={NavLink} to="/help" sx={menuItemStyle}>
+          <ListItemIcon>
+            <HelpOutlineOutlined />
+          </ListItemIcon>
+          <ListItemText primary="Help & Support" />
+        </ListItemButton>
+      </List>
     </Box>
   );
 };

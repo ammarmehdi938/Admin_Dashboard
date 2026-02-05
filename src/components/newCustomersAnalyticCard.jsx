@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 
-const ActiveCustomers = () => {
+const NewCustomersAnalyticalCards = () => {
   return (
     <Box
       sx={{
@@ -73,7 +73,7 @@ const ActiveCustomers = () => {
             mb: "50px",
           }}
         >
-          New Customers
+          Active Customers
         </Typography>
         <Typography
           sx={{
@@ -82,7 +82,7 @@ const ActiveCustomers = () => {
             fontWeight: "bold",
           }}
         >
-          1,248
+          12,427
         </Typography>
         <Typography fontSize="13px" color="#71717A">
           vs. 9,950 last month
@@ -92,4 +92,4 @@ const ActiveCustomers = () => {
   );
 };
 
-export default ActiveCustomers;
+export default NewCustomersAnalyticalCards;

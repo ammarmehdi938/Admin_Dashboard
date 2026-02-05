@@ -1,14 +1,15 @@
 import { Box, Typography } from "@mui/material";
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
+import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
+import PointOfSaleOutlinedIcon from "@mui/icons-material/PointOfSaleOutlined";
 
-const ActiveCustomers = () => {
+const AVGTransectionsCard = () => {
   return (
     <Box
       sx={{
         height: "280px",
         width: "280px",
         p: 3,
-        background: "linear-gradient(180deg, #2E2444 0%, #241C35 100%)",
+        background: "#25253F",
         borderRadius: "20px",
         display: "flex",
         flexDirection: "column",
@@ -45,7 +46,7 @@ const ActiveCustomers = () => {
             borderRadius: "50%",
           }}
         > */}
-          <PeopleOutlinedIcon sx={{ color: "#F8FAFC" }} />
+          <PointOfSaleOutlinedIcon sx={{ color: "#F8FAFC" }} />
           {/* </span> */}
         </Box>
         <Box
@@ -61,7 +62,7 @@ const ActiveCustomers = () => {
           }}
         >
           <Typography sx={{ fontSize: "15px", color: "#34C894" }}>
-            ↑ 24.8%
+            ↑ 18.2%
           </Typography>
         </Box>
       </Box>
@@ -73,7 +74,7 @@ const ActiveCustomers = () => {
             mb: "50px",
           }}
         >
-          New Customers
+          Avg Transaction
         </Typography>
         <Typography
           sx={{
@@ -82,14 +83,14 @@ const ActiveCustomers = () => {
             fontWeight: "bold",
           }}
         >
-          1,248
+          $142,580
         </Typography>
         <Typography fontSize="13px" color="#71717A">
-          vs. 9,950 last month
+          vs. $120,450 last month
         </Typography>
       </Box>
     </Box>
   );
 };
 
-export default ActiveCustomers;
+export default AVGTransectionsCard;

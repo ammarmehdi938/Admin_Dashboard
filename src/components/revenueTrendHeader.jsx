@@ -1,34 +1,31 @@
-import { TextField, Box, Button } from "@mui/material";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { Box, Typography, Button } from "@mui/material";
 
-const TopProductSearchBar = () => {
+const RevenueTrendHeader = () => {
   return (
     <Box
       sx={{
         display: "flex",
-        alignItems: "center",
-        justifyContent: "space-evenly",
-        paddingY: "20px",
+        justifyContent: "space-between",
+        marginX: "30px",
+        marginY: "40px",
       }}
     >
-      <TextField
-        placeholder="Search products, SKU or catagory"
+      <Typography
+        fontFamily="'Playfair Display', serif"
         sx={{
-          width: "400px",
-          border: "1px solid #423A53",
-          marginRight: "10px",
-          borderRadius: "8px",
-          "&:hover": {
-            border: "0px ",
-          },
+          fontSize: "20px",
+          fontWeight: "bold",
+          color: "#F8FAFC",
+          wordSpacing: "10px",
         }}
-      ></TextField>
+      >
+        Revenue Trends
+      </Typography>
       <Box
         sx={{
-          width: "380px",
           border: "1px solid #423A53",
           borderRadius: "8px",
-          ml: "20px",
+          //   ml: "20px",
           display: "flex",
           justifyContent: "space-evenly",
           alignItems: "center",
@@ -45,7 +42,7 @@ const TopProductSearchBar = () => {
             },
           }}
         >
-          All
+          7D
         </Button>
         <Button
           sx={{
@@ -58,7 +55,7 @@ const TopProductSearchBar = () => {
             },
           }}
         >
-          Active
+          30D
         </Button>
         <Button
           sx={{
@@ -71,7 +68,7 @@ const TopProductSearchBar = () => {
             },
           }}
         >
-          Low Stock
+          90D
         </Button>
         <Button
           sx={{
@@ -84,10 +81,10 @@ const TopProductSearchBar = () => {
             },
           }}
         >
-          Archieved
+          1Y
         </Button>
       </Box>
     </Box>
   );
 };
-export default TopProductSearchBar;
+export default RevenueTrendHeader;

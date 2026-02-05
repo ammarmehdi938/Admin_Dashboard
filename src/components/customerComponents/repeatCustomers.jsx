@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 
-const ActiveCustomers = () => {
+const RepeatCustomer = () => {
   return (
     <Box
       sx={{
@@ -45,7 +45,7 @@ const ActiveCustomers = () => {
             borderRadius: "50%",
           }}
         > */}
-          <PeopleOutlinedIcon sx={{ color: "#F8FAFC" }} />
+          <ShoppingBagOutlinedIcon sx={{ color: "#F8FAFC" }} />
           {/* </span> */}
         </Box>
         <Box
@@ -61,7 +61,7 @@ const ActiveCustomers = () => {
           }}
         >
           <Typography sx={{ fontSize: "15px", color: "#34C894" }}>
-            ↑ 24.8%
+            ↑ 18.2%
           </Typography>
         </Box>
       </Box>
@@ -73,7 +73,7 @@ const ActiveCustomers = () => {
             mb: "50px",
           }}
         >
-          New Customers
+          Repeat Customers
         </Typography>
         <Typography
           sx={{
@@ -82,14 +82,14 @@ const ActiveCustomers = () => {
             fontWeight: "bold",
           }}
         >
-          1,248
+          $142,580
         </Typography>
         <Typography fontSize="13px" color="#71717A">
-          vs. 9,950 last month
+          vs. $120,450 last month
         </Typography>
       </Box>
     </Box>
   );
 };
 
-export default ActiveCustomers;
+export default RepeatCustomer;

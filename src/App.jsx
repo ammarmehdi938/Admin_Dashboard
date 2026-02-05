@@ -1,6 +1,6 @@
 import "./App.css";
-import Home from "./pages/home";
 import { Box } from "@mui/material";
+import AppRoutes from "./routes/routes.jsx";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         margin: 0,
       }}
     >
-      <Home />
+      <AppRoutes />
     </Box>
   );
 }
