@@ -4,14 +4,13 @@ import BrowserUpdatedOutlinedIcon from "@mui/icons-material/BrowserUpdatedOutlin
 
 const OrderHeader = () => {
   return (
-    <Box >
+    <Box>
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
-          // width: "100%",
-          gap: 20,
+
+          // gap: 20,
         }}
       >
         <Typography
@@ -22,7 +21,7 @@ const OrderHeader = () => {
           Orders
         </Typography>
 
-        <Box sx={{ display: "flex", gap: 2, ml: "350px" }}>
+        <Box sx={{ display: "flex", gap: 2, ml: "300px" }}>
           <Button
             sx={{
               backgroundColor: "#2C294B",

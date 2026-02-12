@@ -8,15 +8,12 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
-import { useState } from "react";
 
 const createData = (product, Category, Price, Stock, Status, Actions) => {
   return { product, Category, Price, Stock, Status, Actions };
 };
 
 const TopProductTable = () => {
-  const [color, setColor] = useState("rgba(40, 167, 69, 0.15)");
-  const [bgColor, setBgColor] = useState("#28A745");
   const rows = [
     createData(
       "Premium silk boluse",
@@ -25,8 +22,8 @@ const TopProductTable = () => {
       " 342 units",
       <Box
         sx={{
-          backgroundColor: `${color}`,
-          color: `${bgColor}`,
+          backgroundColor: "rgba(52, 211, 153, 0.15)",
+          color: "#319E56",
           height: "50px",
           width: "80px",
           display: "flex",
@@ -89,8 +86,8 @@ const TopProductTable = () => {
       " 342 units",
       <Box
         sx={{
-          backgroundColor: `${color}`,
-          color: `${bgColor}`,
+          backgroundColor: "rgba(52, 211, 153, 0.15)",
+          color: "#319E56",
           height: "50px",
           width: "80px",
           display: "flex",
@@ -156,8 +153,8 @@ const TopProductTable = () => {
       " 342 units",
       <Box
         sx={{
-          backgroundColor: `${color}`,
-          color: `${bgColor}`,
+          backgroundColor: "rgba(52, 211, 153, 0.15)",
+          color: "#319E56",
           height: "50px",
           width: "80px",
           display: "flex",
@@ -212,18 +209,7 @@ const TopProductTable = () => {
       </Box>,
     ),
   ];
-  const handleColors = (status) => {
-    if (status === "In Stock") {
-      setColor("rgba(40, 167, 69, 0.15)");
-      setBgColor("#28A745");
-    } else if (status === "Low Stock") {
-      setColor("rgba(255, 193, 7, 0.15)");
-      setBgColor("#FFC107");
-    } else {
-      setColor("rgba(220, 53, 69, 0.15)");
-      setBgColor("#DC3545");
-    }
-  };
+
   return (
     <TableContainer
       component={Paper}

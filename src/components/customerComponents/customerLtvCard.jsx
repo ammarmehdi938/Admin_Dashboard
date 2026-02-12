@@ -8,7 +8,7 @@ const CustomersLtvCard = () => {
         height: "280px",
         width: "280px",
         p: 3,
-        background: "linear-gradient(180deg, #2E2444 0%, #241C35 100%)",
+        background: "#25253F",
         borderRadius: "20px",
         display: "flex",
         flexDirection: "column",

@@ -1,29 +1,27 @@
 import { TextField, Box, Button } from "@mui/material";
 
-const OrderSearchBar = () => {
+const ProductSearchBar = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#262541",
+        backgroundColor: "#25253F",
         borderRadius: "10px",
-        mr: "50px",
-        width: "950px",
       }}
     >
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
-          //   justifyContent: "space-between",
-          gap: "20px",
+          justifyContent: "space-evenly",
           paddingY: "20px",
-          paddingX: "20px",
         }}
       >
         <TextField
           placeholder="Search products, SKU or catagory"
           sx={{
+            width: "400px",
             border: "1px solid #423A53",
+            marginRight: "10px",
             borderRadius: "8px",
             "&:hover": {
               border: "0px ",
@@ -32,10 +30,10 @@ const OrderSearchBar = () => {
         ></TextField>
         <Box
           sx={{
-            // width: "380px",
+            width: "380px",
             border: "1px solid #423A53",
             borderRadius: "8px",
-            // ml: "20px",
+            ml: "20px",
             display: "flex",
             justifyContent: "space-evenly",
             alignItems: "center",
@@ -65,7 +63,7 @@ const OrderSearchBar = () => {
               },
             }}
           >
-            Completed
+            Active
           </Button>
           <Button
             sx={{
@@ -78,7 +76,7 @@ const OrderSearchBar = () => {
               },
             }}
           >
-            Processing
+            Low Stock
           </Button>
           <Button
             sx={{
@@ -91,20 +89,7 @@ const OrderSearchBar = () => {
               },
             }}
           >
-            Pending
-          </Button>
-          <Button
-            sx={{
-              borderRadius: "10px",
-              marginY: "2px",
-              color: "white",
-              fontWeight: "bold",
-              "&:hover": {
-                backgroundColor: "#7F5FF4",
-              },
-            }}
-          >
-            Cancelled
+            out of Stock
           </Button>
         </Box>
       </Box>
@@ -112,4 +97,4 @@ const OrderSearchBar = () => {
   );
 };
 
-export default OrderSearchBar;
+export default ProductSearchBar;

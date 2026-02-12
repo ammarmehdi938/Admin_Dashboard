@@ -5,14 +5,11 @@ import BrowserUpdatedOutlinedIcon from "@mui/icons-material/BrowserUpdatedOutlin
 
 const CustomerHeader = () => {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box>
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-between",
-          width: "100%",
-          gap: 4,
         }}
       >
         <Typography

@@ -1,16 +1,8 @@
 import { Box } from "@mui/material";
-import OverView from "../components/overView";
+import OverView from "../components/OverviewComponents/overView";
 import WithLayout from "../components/layout";
 
 const Home = () => {
-  return (
-    // <Box sx={{ backgroundColor: "#131426", display: "flex" }}>
-    <OverView />
-  );
-
-  {
-    /* </Box> */
-  }
+  return <OverView />;
 };
-// export default Home;
 export default WithLayout(Home);

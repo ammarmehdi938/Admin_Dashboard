@@ -1,27 +1,30 @@
-import { TextField, Box, Button } from "@mui/material";
+import { Box, TextField, Button } from "@mui/material";
 
-const ProductSearchBar = () => {
+const CustomerSearchBar = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#2A213D",
+        backgroundColor: "#25253F",
         borderRadius: "10px",
+        mr: "50px",
+        width: "950px",
       }}
     >
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-evenly",
+          justifyContent: "space-between",
+          gap: "20px",
           paddingY: "20px",
+          paddingX: "20px",
         }}
       >
         <TextField
           placeholder="Search products, SKU or catagory"
           sx={{
-            width: "400px",
             border: "1px solid #423A53",
-            marginRight: "10px",
+
             borderRadius: "8px",
             "&:hover": {
               border: "0px ",
@@ -30,10 +33,9 @@ const ProductSearchBar = () => {
         ></TextField>
         <Box
           sx={{
-            width: "380px",
             border: "1px solid #423A53",
             borderRadius: "8px",
-            ml: "20px",
+
             display: "flex",
             justifyContent: "space-evenly",
             alignItems: "center",
@@ -63,7 +65,7 @@ const ProductSearchBar = () => {
               },
             }}
           >
-            Active
+            VIP
           </Button>
           <Button
             sx={{
@@ -76,7 +78,7 @@ const ProductSearchBar = () => {
               },
             }}
           >
-            Low Stock
+            Premium
           </Button>
           <Button
             sx={{
@@ -89,12 +91,24 @@ const ProductSearchBar = () => {
               },
             }}
           >
-            out of Stock
+            Regular
+          </Button>
+          <Button
+            sx={{
+              borderRadius: "10px",
+              marginY: "2px",
+              color: "white",
+              fontWeight: "bold",
+              "&:hover": {
+                backgroundColor: "#7F5FF4",
+              },
+            }}
+          >
+            New
           </Button>
         </Box>
       </Box>
     </Box>
   );
 };
-
-export default ProductSearchBar;
+export default CustomerSearchBar;

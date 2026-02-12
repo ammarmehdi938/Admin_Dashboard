@@ -1,14 +1,7 @@
-import {
-  Box,
-  Button,
-  Divider,
-  Typography,
-  TextField,
-  MenuItem,
-  Stack,
-} from "@mui/material";
+import { Box, Button, Divider, Typography } from "@mui/material";
+import ProfileInfo from "../profileInfo";
 
-const ProfileInformation = () => {
+const ChangeAvatar = () => {
   return (
     <Box
       sx={{
@@ -58,7 +51,7 @@ const ProfileInformation = () => {
             variant="contained"
             sx={{
               backgroundColor: "#2D294D",
-              textTransform: "none",
+
               borderRadius: "8px",
               border: "1px solid #423A53",
               width: "fit-content",
@@ -70,9 +63,10 @@ const ProfileInformation = () => {
             JPG, GIF or PNG. Max size of 2MB.
           </Typography>
         </Box>
+        <ProfileInfo />
       </Box>
     </Box>
   );
 };
 
-export default ProfileInformation;
+export default ChangeAvatar;

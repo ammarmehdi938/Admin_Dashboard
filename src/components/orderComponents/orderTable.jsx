@@ -1,387 +1,285 @@
-import { Button, Typography, Box } from "@mui/material";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
-import { useState } from "react";
-
-const createData = (
-  OrderId,
-  Customer,
-  Items,
-  Total,
-  Status,
-  Payment,
-  Actions,
-) => {
-  return { OrderId, Customer, Items, Total, Status, Payment, Actions };
-};
+import {
+  Typography,
+  Box,
+  Avatar,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+} from "@mui/material";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 
 const OrderTable = () => {
-  const rows = [
-    createData(
-      <Typography>
-        #ORD-4582 Feb 4,
-        <br /> 2026 • 10:42 AM
-      </Typography>,
-      "Sarah Johnson",
-      "3 items",
-      " $485.00",
-
-      <Box
-        sx={{
-          backgroundColor: "#2B3B46",
-          color: "#31C894",
-          height: "50px",
-          width: "80px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: "15px",
-        }}
-      >
-        Completed
-      </Box>,
-      <Box
-        sx={{
-          backgroundColor: "#2B3B46",
-          color: "#31C894",
-          //   height: "50px",
-          //   width: "80px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: "15px",
-        }}
-      >
-        Paid
-      </Box>,
-      <Box sx={{ display: "flex", gap: "8px" }}>
-        <Box
-          sx={{
-            height: "35px",
-            width: "35px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "rgba(117, 98, 243, 0.15)",
-            border: "1px solid #423A53",
-            borderRadius: "8px",
-
-            "&:hover": {
-              backgroundColor: "#7462F3",
-            },
-          }}
-        >
-          <EditOutlinedIcon
-            sx={{ cursor: "pointer", color: "#ffffff", fontWeight: "normal" }}
-          />
-        </Box>
-        <Box
-          sx={{
-            height: "35px",
-            width: "35px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "rgba(117, 98, 243, 0.15)",
-            border: "1px solid #423A53",
-            borderRadius: "8px",
-
-            "&:hover": {
-              backgroundColor: "#7462F3",
-            },
-          }}
-        >
-          <VisibilityOffOutlinedIcon
-            sx={{ cursor: "pointer", color: "#ffffff", fontWeight: "normal" }}
-          />
-        </Box>
-      </Box>,
-    ),
-  ];
-  //   const rowNoTwo = [
-  //     createData(
-  //       "Premium silk boluse",
-  //       "Womens Fashion",
-  //       "$245",
-  //       " 342 units",
-  //       <Box
-  //         sx={{
-  //           //   backgroundColor: `${color}`,
-  //           //   color: `${bgColor}`,
-  //           height: "50px",
-  //           width: "80px",
-  //           display: "flex",
-  //           justifyContent: "center",
-  //           alignItems: "center",
-  //           borderRadius: "15px",
-  //         }}
-  //       >
-  //         Low <br /> Stock
-  //       </Box>,
-  //       <Box sx={{ display: "flex", gap: "8px" }}>
-  //         <Box
-  //           sx={{
-  //             height: "35px",
-  //             width: "35px",
-  //             display: "flex",
-  //             justifyContent: "center",
-  //             alignItems: "center",
-  //             alignContent: "center",
-  //             flexDirection: "column",
-  //             backgroundColor: "rgba(117, 98, 243, 0.15)",
-  //             border: "1px solid #423A53",
-  //             borderRadius: "8px",
-
-  //             "&:hover": {
-  //               backgroundColor: "#7462F3",
-  //             },
-  //           }}
-  //         >
-  //           <EditOutlinedIcon
-  //             sx={{ cursor: "pointer", color: "#ffffff", fontWeight: "normal" }}
-  //           />
-  //         </Box>
-  //         <Box
-  //           sx={{
-  //             height: "35px",
-  //             width: "35px",
-  //             display: "flex",
-  //             justifyContent: "center",
-  //             alignItems: "center",
-  //             alignContent: "center",
-  //             backgroundColor: "rgba(117, 98, 243, 0.15)",
-  //             border: "1px solid #423A53",
-  //             borderRadius: "8px",
-
-  //             "&:hover": {
-  //               backgroundColor: "#7462F3",
-  //             },
-  //           }}
-  //         >
-  //           <VisibilityOffOutlinedIcon
-  //             sx={{ cursor: "pointer", color: "#ffffff", fontWeight: "normal" }}
-  //           />
-  //         </Box>
-  //       </Box>,
-  //     ),
-  //   ];
-  //   const rowNoThree = [
-  //     createData(
-  //       "Premium silk boluse",
-  //       "Womens Fashion",
-  //       "$245",
-  //       " 342 units",
-  //       <Box
-  //         sx={{
-  //           //   backgroundColor: `${color}`,
-  //           //   color: `${bgColor}`,
-  //           height: "50px",
-  //           width: "80px",
-  //           display: "flex",
-  //           justifyContent: "center",
-  //           alignItems: "center",
-  //           borderRadius: "15px",
-  //         }}
-  //       >
-  //         Out of <br /> Stock
-  //       </Box>,
-  //       <Box sx={{ display: "flex", gap: "8px" }}>
-  //         <Box
-  //           sx={{
-  //             height: "35px",
-  //             width: "35px",
-  //             display: "flex",
-  //             justifyContent: "center",
-  //             alignItems: "center",
-  //             backgroundColor: "rgba(117, 98, 243, 0.15)",
-  //             border: "1px solid #423A53",
-  //             borderRadius: "8px",
-
-  //             "&:hover": {
-  //               backgroundColor: "#7462F3",
-  //             },
-  //           }}
-  //         >
-  //           <EditOutlinedIcon
-  //             sx={{ cursor: "pointer", color: "#ffffff", fontWeight: "normal" }}
-  //           />
-  //         </Box>
-  //         <Box
-  //           sx={{
-  //             height: "35px",
-  //             width: "35px",
-  //             display: "flex",
-  //             justifyContent: "center",
-  //             alignItems: "center",
-  //             backgroundColor: "rgba(117, 98, 243, 0.15)",
-  //             border: "1px solid #423A53",
-  //             borderRadius: "8px",
-
-  //             "&:hover": {
-  //               backgroundColor: "#7462F3",
-  //             },
-  //           }}
-  //         >
-  //           <VisibilityOffOutlinedIcon
-  //             sx={{ cursor: "pointer", color: "#ffffff", fontWeight: "normal" }}
-  //           />
-  //         </Box>
-  //       </Box>,
-  //     ),
-  //   ];
+  // Common style for action icon boxes
+  const actionButtonStyle = {
+    height: "35px",
+    width: "35px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(255, 255, 255, 0.05)",
+    border: "1px solid #423A53",
+    borderRadius: "8px",
+    cursor: "pointer",
+    color: "#8A8AA0",
+    transition: "0.3s",
+    "&:hover": {
+      backgroundColor: "#7462F3",
+      color: "#ffffff",
+    },
+  };
 
   return (
-    <Box
-      sx={{
-        width: "950px",
-      }}
-    >
+    <Box sx={{ width: "980px", overflow: "hidden", p: 2 }}>
       <TableContainer
         component={Paper}
-        sx={{ backgroundColor: "#262541", color: "white", boxShadow: "none" }}
+        sx={{ backgroundColor: "#1A1932", boxShadow: "none" }}
       >
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead
-            sx={{
-              backgroundColor: "#31284B",
-              color: " #627289",
-            }}
-          >
+        <Table sx={{ minWidth: 900 }}>
+          <TableHead sx={{ backgroundColor: "rgba(255, 255, 255, 0.02)" }}>
             <TableRow>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                OrderId
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                Customer
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                Items
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                Total
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                Status
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                Payment
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                Actions
-              </TableCell>
+              {[
+                "Order ID",
+                "Customer",
+                "Items",
+                "Total",
+                "Status",
+                "Payment",
+                "Actions",
+              ].map((text) => (
+                <TableCell
+                  key={text}
+                  sx={{
+                    color: "#627289",
+                    borderBottom: "1px solid #2D2C4D",
+                    fontWeight: 600,
+                  }}
+                >
+                  {text}
+                </TableCell>
+              ))}
             </TableRow>
           </TableHead>
+
           <TableBody
-            sx={{
-              height: "120px",
-              borderBottom: "1px solid #423A53",
-              "&:hover": {
-                backgroundColor: "#31284B",
-                color: "red",
-              },
-            }}
+            sx={{ "& td": { borderBottom: "1px solid #2D2C4D", py: 2 } }}
           >
-            {rows.map((row) => (
-              <TableRow
-                key={row.product}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {row.OrderId}
-                </TableCell>
-                <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                  {row.Customer}
-                </TableCell>
-                <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                  {row.Items}
-                </TableCell>
-                <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                  {row.Total}
-                </TableCell>
-                <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                  {row.Payment}
-                </TableCell>
-                <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                  {row.Actions}
-                </TableCell>
-              </TableRow>
-            ))}
+            {/* ROW 1: EMMA BROWN */}
+            <TableRow
+              sx={{
+                "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.03)" },
+              }}
+            >
+              <TableCell>
+                <Typography sx={{ color: "white", fontWeight: 700 }}>
+                  #ORD-4580
+                </Typography>
+                <Typography sx={{ color: "#627289", fontSize: "0.75rem" }}>
+                  Feb 3, 2026 • 04:28 PM
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
+                  <Avatar
+                    sx={{
+                      bgcolor: "#7462F3",
+                      width: 32,
+                      height: 32,
+                      fontSize: "0.8rem",
+                    }}
+                  >
+                    EB
+                  </Avatar>
+                  <Box>
+                    <Typography
+                      sx={{
+                        color: "white",
+                        fontSize: "0.9rem",
+                        fontWeight: 600,
+                      }}
+                    >
+                      Emma Brown
+                    </Typography>
+                    <Typography sx={{ color: "#627289", fontSize: "0.75rem" }}>
+                      emma.b@email.com
+                    </Typography>
+                  </Box>
+                </Box>
+              </TableCell>
+              <TableCell>
+                <Typography sx={{ color: "white", fontSize: "0.9rem" }}>
+                  1 item
+                </Typography>
+                <Typography sx={{ color: "#627289", fontSize: "0.75rem" }}>
+                  Vanilla Noir Parfum
+                </Typography>
+              </TableCell>
+              <TableCell sx={{ color: "white", fontWeight: 700 }}>
+                $185.00
+              </TableCell>
+              <TableCell>
+                <Box
+                  sx={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 1,
+                    px: 1.5,
+                    py: 0.5,
+                    borderRadius: "20px",
+                    backgroundColor: "rgba(255, 184, 0, 0.1)",
+                    color: "#FFB800",
+                    fontSize: "0.75rem",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: "50%",
+                      bgcolor: "#FFB800",
+                    }}
+                  />{" "}
+                  Pending
+                </Box>
+              </TableCell>
+              <TableCell>
+                <Typography
+                  sx={{
+                    color: "#FFB800",
+                    fontSize: "0.75rem",
+                    fontWeight: 600,
+                    bgcolor: "rgba(255, 184, 0, 0.05)",
+                    px: 1,
+                    py: 0.3,
+                    borderRadius: "4px",
+                    display: "inline-block",
+                  }}
+                >
+                  Pending
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Box sx={{ display: "flex", gap: 1 }}>
+                  <Box sx={actionButtonStyle}>
+                    <VisibilityOutlinedIcon sx={{ fontSize: 18 }} />
+                  </Box>
+                  <Box sx={actionButtonStyle}>
+                    <FileDownloadOutlinedIcon sx={{ fontSize: 18 }} />
+                  </Box>
+                </Box>
+              </TableCell>
+            </TableRow>
+
+            {/* ROW 2: DAVID WILSON */}
+            <TableRow
+              sx={{
+                "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.03)" },
+              }}
+            >
+              <TableCell>
+                <Typography sx={{ color: "white", fontWeight: 700 }}>
+                  #ORD-4579
+                </Typography>
+                <Typography sx={{ color: "#627289", fontSize: "0.75rem" }}>
+                  Feb 3, 2026 • 02:14 PM
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
+                  <Avatar
+                    sx={{
+                      bgcolor: "#3498db",
+                      width: 32,
+                      height: 32,
+                      fontSize: "0.8rem",
+                    }}
+                  >
+                    DW
+                  </Avatar>
+                  <Box>
+                    <Typography
+                      sx={{
+                        color: "white",
+                        fontSize: "0.9rem",
+                        fontWeight: 600,
+                      }}
+                    >
+                      David Wilson
+                    </Typography>
+                    <Typography sx={{ color: "#627289", fontSize: "0.75rem" }}>
+                      d.wilson@email.com
+                    </Typography>
+                  </Box>
+                </Box>
+              </TableCell>
+              <TableCell>
+                <Typography sx={{ color: "white", fontSize: "0.9rem" }}>
+                  4 items
+                </Typography>
+                <Typography sx={{ color: "#627289", fontSize: "0.75rem" }}>
+                  Dinnerware Set, Wallet...
+                </Typography>
+              </TableCell>
+              <TableCell sx={{ color: "white", fontWeight: 700 }}>
+                $624.00
+              </TableCell>
+              <TableCell>
+                <Box
+                  sx={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 1,
+                    px: 1.5,
+                    py: 0.5,
+                    borderRadius: "20px",
+                    backgroundColor: "rgba(49, 200, 148, 0.1)",
+                    color: "#31C894",
+                    fontSize: "0.75rem",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 6,
+                      height: 6,
+                      borderRadius: "50%",
+                      bgcolor: "#31C894",
+                    }}
+                  />{" "}
+                  Completed
+                </Box>
+              </TableCell>
+              <TableCell>
+                <Typography
+                  sx={{
+                    color: "#31C894",
+                    fontSize: "0.75rem",
+                    fontWeight: 600,
+                    bgcolor: "rgba(49, 200, 148, 0.05)",
+                    px: 1,
+                    py: 0.3,
+                    borderRadius: "4px",
+                    display: "inline-block",
+                  }}
+                >
+                  Paid
+                </Typography>
+              </TableCell>
+              <TableCell>
+                <Box sx={{ display: "flex", gap: 1 }}>
+                  <Box sx={actionButtonStyle}>
+                    <VisibilityOutlinedIcon sx={{ fontSize: 18 }} />
+                  </Box>
+                  <Box sx={actionButtonStyle}>
+                    <FileDownloadOutlinedIcon sx={{ fontSize: 18 }} />
+                  </Box>
+                </Box>
+              </TableCell>
+            </TableRow>
           </TableBody>
-          {/* <TableBody
-          sx={{
-            height: "120px",
-            "&:hover": {
-              backgroundColor: "#31284B",
-            },
-          }}
-        >
-          {rowNoTwo.map((row) => (
-            <TableRow
-              key={row.product}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.product}
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                {row.Category}
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                {row.Price}
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                {row.Stock}
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                {row.Status}
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                {row.Actions}
-              </TableCell>
-            </TableRow>
-          ))} */}
-          {/*  </TableBody> */}
-          {/* <TableBody
-          sx={{
-            height: "120px",
-            "&:hover": {
-              backgroundColor: "#31284B",
-            },
-          }}
-        >
-          {rowNoThree.map((row) => (
-            <TableRow
-              key={row.product}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.product}
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                {row.Category}
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                {row.Price}
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                {row.Stock}
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                {row.Status}
-              </TableCell>
-              <TableCell sx={{ color: "white", fontWeight: "600" }}>
-                {row.Actions}
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody> */}
         </Table>
       </TableContainer>
     </Box>

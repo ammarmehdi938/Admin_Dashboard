@@ -1,13 +1,13 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 const TotalOrdersCard = () => {
   return (
     <Box
-       sx={{
+      sx={{
         height: "280px",
         width: "280px",
         p: 3,
-        background: "linear-gradient(180deg, #2E2444 0%, #241C35 100%)",
+        background: "#25253F",
         borderRadius: "20px",
         display: "flex",
         flexDirection: "column",

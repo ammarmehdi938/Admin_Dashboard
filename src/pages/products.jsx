@@ -1,14 +1,13 @@
 import WithLayout from "../components/layout";
-import ProductHeader from "../components/productHeader";
+import ProductHeader from "../components/productComponents/productHeader";
 import { Box } from "@mui/material";
-import ProductCards from "../components/productCards";
-import ProductSearchBar from "../components/productSearchBar";
+import ProductCards from "../components/productComponents/productCards";
+import ProductSearchBar from "../components/productComponents/productSearchBar";
 import AllProducts from "../components/allProducts";
 
 const Products = () => {
   return (
     <Box sx={{ mt: "50px", marginX: "50px" }}>
-      {/* <OverViewHeader /> */}
       <ProductHeader />
       <Box>
         <ProductCards />

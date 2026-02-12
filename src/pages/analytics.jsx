@@ -1,9 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import WithLayout from "../components/layout";
-import AnalyticHeader from "../components/analyticHeader";
-import AnalyticCardsContainer from "../components/analyticCardsCotaier";
-import AnalyticChartContainer from "../components/analyticChartContainer";
-import AnalyticTable from "../components/analyticTable";
+import AnalyticHeader from "../components/analyticComponents/analyticHeader";
+import AnalyticCardsContainer from "../components/analyticComponents/analyticCardsCotaier";
+import AnalyticChartContainer from "../components/analyticComponents/analyticChartContainer";
+import AnalyticTable from "../components/analyticComponents/analyticTable";
 // import TopPerformingAnalyticProducts from "../components/topPerformingAnalyticProducts";
 
 const Analytics = () => {
@@ -24,7 +24,7 @@ const Analytics = () => {
         <AnalyticChartContainer />
       </Box>
       <Box>
-        {/* <AnalyticTable /> */}
+        <AnalyticTable />
       </Box>
     </Box>
   );

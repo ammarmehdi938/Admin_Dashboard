@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
-import TotalOrdersCard from "./totalOrdersCard";
-import ActiveCustomers from "./activeCustomers";
-import ConversionRate from "./conversionRate";
-import TotalRevenueCard from "./totalRevenueCard";
+import TotalOrdersCard from "../totalOrdersCard";
+import ActiveCustomers from "../activeCustomers";
+import ConversionRate from "../conversionRate";
+import TotalRevenueCard from "../totalRevenueCard";
 
 const CardsContainer = () => {
   return (

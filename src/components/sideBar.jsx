@@ -139,13 +139,6 @@ const SideBar = () => {
           </ListItemIcon>
           <ListItemText primary="Preferences" />
         </ListItemButton>
-
-        <ListItemButton component={NavLink} to="/help" sx={menuItemStyle}>
-          <ListItemIcon>
-            <HelpOutlineOutlined />
-          </ListItemIcon>
-          <ListItemText primary="Help & Support" />
-        </ListItemButton>
       </List>
     </Box>
   );

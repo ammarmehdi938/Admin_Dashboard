@@ -54,7 +54,7 @@ const TopProductSearchBar = () => {
             color: "white",
             fontWeight: "bold",
             "&:hover": {
-              backgroundColor: "#7F5FF4",
+              backgroundColor: "#292746",
             },
           }}
         >

@@ -1,12 +1,12 @@
 import { Box } from "@mui/material";
-import TopProductSearchBar from "./topProductSearchBar";
-import TopProductTable from "./topProductTable";
+import TopProductSearchBar from "../topProductSearchBar";
+import TopProductTable from "../topProductTable";
 
 const TopProducts = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#2A213D",
+        backgroundColor: "#25253F",
         color: "white",
         minHeight: "60px",
         minWidth: "900px",
@@ -21,7 +21,6 @@ const TopProducts = () => {
     >
       <Box>
         <TopProductSearchBar />
-        
         <TopProductTable />
       </Box>
     </Box>

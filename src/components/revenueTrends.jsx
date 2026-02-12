@@ -14,7 +14,7 @@ const RevenueTrends = () => {
     >
       <Box
         sx={{
-          backgroundColor: "#2C2643",
+          backgroundColor: "#25253F",
           width: "600px",
           height: "600px",
           border: "1px solid #423A53",
@@ -32,9 +32,7 @@ const RevenueTrends = () => {
           <DataChart />
         </Box>
       </Box>
-      <Box sx={{ ml: "50px" , mt:'50px'}}>
-        {/* <CustomerSegment /> */}
-      </Box>
+      <Box sx={{ ml: "50px", mt: "50px" }}>{/* <CustomerSegment /> */}</Box>
     </Box>
   );
 };

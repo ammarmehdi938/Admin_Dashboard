@@ -12,7 +12,7 @@ const RevenueChartActivity = () => {
   return (
     <Box
       sx={{
-        backgroundColor: "#2C2643",
+        backgroundColor: "#25253F",
         width: "300px",
         height: "600px",
         border: "1px solid #423A53",

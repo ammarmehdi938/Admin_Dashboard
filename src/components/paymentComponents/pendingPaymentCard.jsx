@@ -1,96 +1,114 @@
-import { Box, Typography } from "@mui/material";
-import AttachMoneyOutlinedIcon from "@mui/icons-material/AttachMoneyOutlined";
-import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
+import { Box, TextField, Button } from "@mui/material";
 
-const PendingPaymentCard = () => {
-  return (
-    <Box
-      sx={{
-        height: "280px",
-        width: "280px",
-        p: 3,
-        background: "#25253F",
-        borderRadius: "20px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        border: "1px solid #423A53",
-        "&:hover": {
-          borderColor: "#7562F3",
-          boxShadow: "0 10px 30px rgba(117, 98, 243, 0.25)",
-        },
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-        }}
-      >
-        <Box
-          sx={{
-            backgroundColor: "#7562F3",
-            width: "45px",
-            height: "45px",
-            borderRadius: "10px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {/* <span
-          style={{
-            border: "2px solid white",
-            
-            borderRadius: "50%",
-          }}
-        > */}
-          <AccessTimeOutlinedIcon sx={{ color: "#F8FAFC" }} />
-          {/* </span> */}
-        </Box>
-        <Box
-          sx={{
-            backgroundColor: "rgba(34, 197, 94, 0.15)",
-            width: "70px",
-            height: "30px",
-            //   padding: "",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: "20px",
-          }}
-        >
-          <Typography sx={{ fontSize: "15px", color: "#34C894" }}>
-            ↑ 18.2%
-          </Typography>
-        </Box>
-      </Box>
-      <Box>
-        <Typography
-          sx={{
-            color: "#B8C0CE",
-            fontSize: "14px",
-            mb: "50px",
-          }}
-        >
-          Pending Payments
-        </Typography>
-        <Typography
-          sx={{
-            fontSize: "32px",
-            color: "#F8FAFC",
-            fontWeight: "bold",
-          }}
-        >
-          $142,580
-        </Typography>
-        <Typography fontSize="13px" color="#71717A">
-          vs. $120,450 last month
-        </Typography>
-      </Box>
-    </Box>
-  );
+const PaymentSearchBar = () => {
+  // return (
+    // <Box
+    //   sx={{
+    //     backgroundColor: "#25253F",
+    //     borderRadius: "10px",
+    //     mr: "50px",
+    //     width: "950px",
+    //   }}
+    // >
+    //   <Box
+    //     sx={{
+    //       display: "flex",
+    //       alignItems: "center",
+    //       justifyContent: "space-between",
+    //       gap: "20px",
+    //       paddingY: "20px",
+    //       paddingX: "20px",
+    //     }}
+    //   >
+    //     <TextField
+    //       placeholder="Search products, SKU or catagory"
+    //       sx={{
+    //         border: "1px solid #423A53",
+
+    //         borderRadius: "8px",
+    //         "&:hover": {
+    //           border: "0px ",
+    //         },
+    //       }}
+    //     ></TextField>
+    //     <Box
+    //       sx={{
+    //         border: "1px solid #423A53",
+    //         borderRadius: "8px",
+
+    //         display: "flex",
+    //         justifyContent: "space-evenly",
+    //         alignItems: "center",
+    //       }}
+    //     >
+    //       <Button
+    //         sx={{
+    //           borderRadius: "10px",
+    //           marginY: "2px",
+    //           color: "white",
+    //           fontWeight: "bold",
+    //           "&:hover": {
+    //             backgroundColor: "#7F5FF4",
+    //           },
+    //         }}
+    //       >
+    //         All
+    //       </Button>
+    //       <Button
+    //         sx={{
+    //           borderRadius: "10px",
+    //           marginY: "2px",
+    //           color: "white",
+    //           fontWeight: "bold",
+    //           "&:hover": {
+    //             backgroundColor: "#7F5FF4",
+    //           },
+    //         }}
+    //       >
+    //         VIP
+    //       </Button>
+    //       <Button
+    //         sx={{
+    //           borderRadius: "10px",
+    //           marginY: "2px",
+    //           color: "white",
+    //           fontWeight: "bold",
+    //           "&:hover": {
+    //             backgroundColor: "#7F5FF4",
+    //           },
+    //         }}
+    //       >
+    //         Premium
+    //       </Button>
+    //       <Button
+    //         sx={{
+    //           borderRadius: "10px",
+    //           marginY: "2px",
+    //           color: "white",
+    //           fontWeight: "bold",
+    //           "&:hover": {
+    //             backgroundColor: "#7F5FF4",
+    //           },
+    //         }}
+    //       >
+    //         Regular
+    //       </Button>
+    //       <Button
+    //         sx={{
+    //           borderRadius: "10px",
+    //           marginY: "2px",
+    //           color: "white",
+    //           fontWeight: "bold",
+    //           "&:hover": {
+    //             backgroundColor: "#7F5FF4",
+    //           },
+    //         }}
+    //       >
+    //         New
+    //       </Button>
+    //     </Box>
+    //   </Box>
+    // </Box>
+  // );
 };
-
-export default PendingPaymentCard;
+export default PaymentSearchBar;
