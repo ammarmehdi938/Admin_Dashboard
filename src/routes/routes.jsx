@@ -6,6 +6,10 @@ import Customers from "../pages/customers";
 import { Routes, Route } from "react-router-dom";
 import Payments from "../pages/payments";
 import Preference from "../pages/preference";
+import SignUp from "../pages/signUp";
+import LogIn from "../pages/logIn";
+import ResetPassword from "../pages/resetPassword";
+import ConfirmPassword from "../pages/confirmPassword";
 
 const AppRoutes = () => {
   return (
@@ -17,6 +21,10 @@ const AppRoutes = () => {
       <Route path="/customers" element={<Customers />} />
       <Route path="/payments" element={<Payments />} />
       <Route path="/preferences" element={<Preference />} />
+      <Route path="/signup" element={<SignUp />}></Route>
+      <Route path="/login" element={<LogIn />}></Route>
+      <Route path="/ResetPassword" element={<ResetPassword />}></Route>
+      <Route path="/confirmpassword" element={<ConfirmPassword />}></Route>
     </Routes>
   );
 };

@@ -7,7 +7,7 @@ import AllProducts from "../components/allProducts";
 
 const Products = () => {
   return (
-    <Box sx={{ mt: "50px", marginX: "50px" }}>
+    <Box sx={{ mt: "20px", marginX: "50px" }}>
       <ProductHeader />
       <Box>
         <ProductCards />

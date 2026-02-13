@@ -7,7 +7,7 @@ import OrderTable from "../components/orderComponents/orderTable";
 
 const Orders = () => {
   return (
-    <Box sx={{}}>
+    <Box sx={{ ml: "50px" }}>
       <Box sx={{ mt: "50px" }}>
         <OrderHeader />
       </Box>

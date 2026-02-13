@@ -68,7 +68,6 @@ const OrderTable = () => {
           <TableBody
             sx={{ "& td": { borderBottom: "1px solid #2D2C4D", py: 2 } }}
           >
-            {/* ROW 1: EMMA BROWN */}
             <TableRow
               sx={{
                 "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.03)" },

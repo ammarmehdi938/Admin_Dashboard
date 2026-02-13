@@ -63,7 +63,6 @@ const SideBar = () => {
         width: 300,
         minHeight: "100vh",
         backgroundColor: "#1C1C36",
-        // overflow: "auto",
       }}
     >
       {/* Logo */}
@@ -138,6 +137,12 @@ const SideBar = () => {
             <SettingsOutlined />
           </ListItemIcon>
           <ListItemText primary="Preferences" />
+        </ListItemButton>
+        <ListItemButton component={NavLink} to="/signup" sx={menuItemStyle}>
+          <ListItemIcon>
+            <SettingsOutlined />
+          </ListItemIcon>
+          <ListItemText primary="Sign Up" />
         </ListItemButton>
       </List>
     </Box>

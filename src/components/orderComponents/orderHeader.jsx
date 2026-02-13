@@ -9,8 +9,6 @@ const OrderHeader = () => {
         sx={{
           display: "flex",
           alignItems: "center",
-
-          // gap: 20,
         }}
       >
         <Typography
@@ -38,7 +36,6 @@ const OrderHeader = () => {
             <BrowserUpdatedOutlinedIcon sx={{ mr: 1 }} />
             Export
           </Button>
-
           <Button
             sx={{
               backgroundColor: "#6A64F2",
@@ -61,8 +58,7 @@ const OrderHeader = () => {
           156 Total Products
         </Typography>
         <Typography sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-          {/* <AccessTimeOutlinedIcon sx={{ fontSize: "20px" }} /> */}✅ 152 in
-          stocks
+          ✅ 152 in stocks
         </Typography>
       </Box>
     </Box>

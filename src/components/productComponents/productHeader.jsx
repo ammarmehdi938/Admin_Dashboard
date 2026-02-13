@@ -1,17 +1,16 @@
 import { Box, Typography, Button } from "@mui/material";
-import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import BrowserUpdatedOutlinedIcon from "@mui/icons-material/BrowserUpdatedOutlined";
 
 const ProductHeader = () => {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box>
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          width: "100%",
+          // width: "100%",
           gap: 4,
         }}
       >
