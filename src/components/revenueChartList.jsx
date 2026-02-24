@@ -63,7 +63,6 @@ const RevenueChartActivityList = () => {
                       `}
             sx={{
               color: "#F8FAEB",
-              color: "#F8FAEB",
               "& .MuiListItemText-secondary": { color: "#A7AFBF" },
             }}
           />
@@ -90,7 +89,6 @@ const RevenueChartActivityList = () => {
                  1 hour ago`}
             sx={{
               color: "#F8FAEB",
-              color: "#F8FAEB",
               "& .MuiListItemText-secondary": { color: "#A7AFBF" },
             }}
           />
@@ -115,7 +113,6 @@ const RevenueChartActivityList = () => {
             primary="Payment processed"
             secondary={`$2,450 received from Stripe <br/> 3 hours ago`}
             sx={{
-              color: "#F8FAEB",
               color: "#F8FAEB",
               "& .MuiListItemText-secondary": { color: "#A7AFBF" },
             }}

@@ -20,3 +20,7 @@ export const SignUpValidationSchema = Yup.object({
   terms: Yup.boolean().oneOf([true], "You must accept the terms"),
 });
 
+export const LoginValidationSchema = Yup.object({
+  email: Yup.string().email("Invalid email").required("Email is required"),
+  password: Yup.string().required("Password is required"),
+});

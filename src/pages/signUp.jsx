@@ -6,9 +6,10 @@ import {
   FormControlLabel,
   Button,
 } from "@mui/material";
-import { Formik, useFormik, validateYupSchema } from "formik";
+import { useFormik } from "formik";
 import { SignUpValidationSchema } from "../schema/validationSchema";
 import { useNavigate } from "react-router-dom";
+import api from "../axios/axios";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -21,9 +22,31 @@ const SignUp = () => {
       confirmPassword: "",
       terms: false,
     },
-    validateYupSchema: SignUpValidationSchema,
-    onSubmit: (values) => {
-      console.log("Form Data:", values);
+    validationSchema: SignUpValidationSchema,
+    onSubmit: async (values, { setSubmitting, setErrors }) => {
+      try {
+        const payload = {
+          fullName: values.fullName,
+          email: values.email,
+          password: values.password,
+        };
+
+        await api.post("/users", payload);
+
+        navigate("/login");
+      } catch (error) {
+        if (error.response) {
+          if (error.response.status === 409) {
+            setErrors({ email: "Email already registered" });
+          } else {
+            setErrors({ apiError: "Signup failed. Try again." });
+          }
+        } else {
+          setErrors({ apiError: "Network error. Try again." });
+        }
+      } finally {
+        setSubmitting(false);
+      }
     },
   });
   const textFieldStyles = {
@@ -57,7 +80,6 @@ const SignUp = () => {
     <Box
       sx={{
         backgroundColor: "#131426",
-        // height: "100vh",
         width: "100%",
         display: "flex",
         alignItems: "center",

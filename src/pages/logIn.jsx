@@ -6,24 +6,46 @@ import {
   FormControlLabel,
   Button,
 } from "@mui/material";
-import { Formik, useFormik, validateYupSchema } from "formik";
-import { SignUpValidationSchema } from "../schema/validationSchema";
+import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
+import api from "../axios/axios";
+import { LoginValidationSchema } from "../schema/validationSchema";
 
 const LogIn = () => {
   const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
-      fullName: "",
       email: "",
       password: "",
-      confirmPassword: "",
-      terms: false,
     },
-    validateYupSchema: SignUpValidationSchema,
-    onSubmit: (values) => {
-      console.log("Form Data:", values);
+
+    validationSchema: LoginValidationSchema,
+    onSubmit: async (values, { setSubmitting, setErrors }) => {
+      try {
+        const response = await api.get("/users", {
+          params: {
+            email: values.email,
+            password: values.password,
+          },
+        });
+
+        if (response.data.length === 0) {
+          setErrors({ apiError: "Invalid email or password" });
+          return;
+        }
+
+        const user = response.data[0];
+
+        // optional: store user
+        localStorage.setItem("user", JSON.stringify(user));
+
+        navigate("/dashboard");
+      } catch (error) {
+        setErrors({ apiError: "Login failed. Try again." });
+      } finally {
+        setSubmitting(false);
+      }
     },
   });
   const textFieldStyles = {
@@ -138,6 +160,10 @@ const LogIn = () => {
           >
             Forgot password?
           </Typography>
+          {formik.errors.apiError && (
+            <Typography color="error">{formik.errors.apiError}</Typography>
+          )}
+
           <Button
             type="submit"
             variant="contained"
